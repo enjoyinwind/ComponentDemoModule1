@@ -1,0 +1,2 @@
+# ComponentDemoModule1
+此项目是ComponentDemo项目使用的组件apk源码；aapt使用的是ACDD的，用于生成不同范围的resourceId
