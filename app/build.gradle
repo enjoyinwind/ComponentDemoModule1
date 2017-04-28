@@ -1,0 +1,54 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.2"
+    defaultConfig {
+        applicationId "com.snda.componentdemo"
+        minSdkVersion 9
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0.1"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+        acdd {
+            aaptOptions.additionalParameters '--ACDD-resoure-id', '0x5e'
+        }
+    }
+
+//    afterEvaluate {
+//        for (variant in android.applicationVariants) {
+//            def scope = variant.getVariantData().getScope()
+//            String mergeTaskName = scope.getMergeResourcesTask().name
+//            def mergeTask = tasks.getByName(mergeTaskName)
+//
+//            mergeTask.doLast {
+//                copy {
+//                    int i=0
+//                    from(android.sourceSets.main.res.srcDirs) {
+//                        include 'values/public.xml'
+//                        rename 'public.xml', (i++ == 0? "public.xml": "public_${i}.xml")
+//                    }
+//
+//                    into(mergeTask.outputDir)
+//                }
+//            }
+//        }
+//    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    //compile 'com.android.support:appcompat-v7:24.2.1'
+    testCompile 'junit:junit:4.12'
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <public type="drawable" name="daoyu" id="0x1002f000"/>
+    <public type="mipmap" name="launcher" id="0x1003f000"/>
+    <public type="layout" name="module_main" id="0x1004f005"/>
+    <public type="string" name="module_app_name" id="0x1008f000"/>
+</resources>
